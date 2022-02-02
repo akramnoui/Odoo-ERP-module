@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
-            <!-- <record model="ir.ui.view" id="demandes_tree_view" >
-                <field name="name" >demande.view.tree</field>
-                <field name="model">esi.demande</field>
+            <!-- <record model="ir.ui.view" id="diplomes_tree_view" >
+                <field name="name" >diplome.view.tree</field>
+                <field name="model">esi.diplome</field>
                 <field name="arch" type="xml"> 
                     <tree>
                         <field name="f_name"/>
@@ -18,16 +18,16 @@
 
 
              </record> -->
-             <record model="ir.ui.view" id="demandes_tree_view">
-                <field name="name">demande.view.tree</field>
-                <field name="model">esi.demande</field>
+             <record model="ir.ui.view" id="diplomes_tree_view">
+                <field name="name">diplome.view.tree</field>
+                <field name="model">esi.diplome</field>
                 <field name="arch" type="xml">
-                    <tree string="demande Tree">
+                    <tree string="diplome Tree">
                         <field name="f_name"/>
-                        <field name="l_name"/>
-                        <field name="adresse"/>
+                        <field name="l_name"/> 
+                        <!-- <field name="adresse"/>
                         <field name="diplome"/> 
-                         <field name="matricule"/>
+                         <field name="matricule"/> -->
                        <!-- <field name="specialite"/>  -->
                         <!-- <field name="file" filename="file_name"/>
 
@@ -40,14 +40,18 @@
     
 
 
-             <record id="Demande_view_form" model="ir.ui.view">
-                 <field name="name">demande.view.form</field>
-                 <field name="model">esi.demande</field>
+             <record id="diplome_view_form" model="ir.ui.view">
+                 <field name="name">diplome.view.form</field>
+                 <field name="model">esi.diplome</field>
                  <field name="arch" type="xml">
-                     <form string="Demande Form">
+                     <form string="diplome Form">
                          <group>
                         <field name="f_name"/>
                         <field name="l_name"/>
+                        <!-- <field name="matricule"/>
+                        <field name="adresse"/> -->
+                        <!-- <field name="type"/>
+                        <field name="specialte"/> -->
                       
                         <!-- <field name="matricule"/>
                         <field name="specialite"/>
@@ -65,25 +69,16 @@
             that is an action opening a view or a set of views
         -->
 
-             <record id="demande_action" model="ir.actions.act_window">
-                 <field name="name">demande</field>
-                 <field name="res_model">esi.demande</field>
+             <record id="diplome_action" model="ir.actions.act_window">
+                 <field name="name">diplome</field>
+                 <field name="res_model">esi.diplome</field>
                  <field name="view_mode">tree,form</field>
                      
              </record>
 
 
-          <!-- top level menu: no parent -->
-        <menuitem id="main_esi_menu" name="esi"/>
-        <!-- A first level in the left side menu is needed
-             before using action= attribute -->
-        <menuitem id="esi_menu" name="esi"
-                  parent="main_esi_menu"/>
-        <!-- the following menuitem should appear *after*
-             its parent esi_menu and *after* its
-             action client_list_action -->
-        <menuitem id="demande_menu" name="Demandes" parent="esi_menu"
-                  action="demande_action"/>
+        <menuitem id="diplome_menu" name="diplomes" parent="main_esi_menu"
+                  action="diplome_action"/>
         <!-- Full id location:
              action="esi.client_list_action"
              It is not required when it is the same module -->

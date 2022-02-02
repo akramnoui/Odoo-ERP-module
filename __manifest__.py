@@ -24,7 +24,8 @@
     'data': [
         'security/ir.model.access.csv',
         'templates.xml',
-        'views.xml',
+        'views/Demandeview.xml' ,
+         'views/Diplome.xml' ,
 
     ],
 

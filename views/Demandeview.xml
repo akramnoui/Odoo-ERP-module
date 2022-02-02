@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+            <!-- <record model="ir.ui.view" id="demandes_tree_view" >
+                <field name="name" >demande.view.tree</field>
+                <field name="model">esi.demande</field>
+                <field name="arch" type="xml"> 
+                    <tree>
+                        <field name="f_name"/>
+                        <field name="l_name"/>
+                        <field name="sexe"/>
+                        <field name="adress"/>
+                        <field name="birthday"/>
+                    </tree>
+                
+   
+                 </field>
+
+
+             </record> -->
+             <record model="ir.ui.view" id="demandes_tree_view">
+                <field name="name">demande.view.tree</field>
+                <field name="model">esi.demande</field>
+                <field name="arch" type="xml">
+                    <tree string="demande Tree">
+                        <field name="f_name"/>
+                        <field name="l_name"/>
+                      <!-- <field name="diplome_id"/>  -->
+                         <field name="matricule"/>
+                       <!-- <field name="specialite"/>  -->
+                        <!-- <field name="file" filename="file_name"/>
+
+                        <field name="file_name" invisible="1"/> -->
+
+         
+                    </tree>
+                </field>
+            </record>
+    
+
+
+             <record id="Demande_view_form" model="ir.ui.view">
+                 <field name="name">demande.view.form</field>
+                 <field name="model">esi.demande</field>
+                 <field name="arch" type="xml">
+                     <form string="Demande Form">
+                         <group>
+                        <field name="f_name"/>
+                        <field name="l_name"/>
+                        <!-- <field name="diplome"/>  -->
+                        <field name="matricule"/>
+                        <!-- <field name="diplome_id"/> -->
+                        <field name="current_user"/>
+                        <!-- <field name="adress"/> -->
+                        <!-- <field name="matricule"/>
+                        <field name="birthday"/>
+                        
+                        <field name="current_user"/>
+                        <field name="statut"/>
+                         -->
+                    
+                        <field name="file" filename="file_name"/>
+
+                        <field name="file_name" invisible="1"/> 
+                       
+                         </group>
+                     </form>
+                 </field>
+             </record>
+        <!-- window action -->
+        <!--
+            The following tag is an action definition for a "window action",
+            that is an action opening a view or a set of views
+        -->
+
+             <record id="demande_action" model="ir.actions.act_window">
+                 <field name="name">demande</field>
+                 <field name="res_model">esi.demande</field>
+                 <field name="view_mode">tree,form</field>
+                     
+             </record>
+
+
+          <!-- top level menu: no parent -->
+        <menuitem id="main_esi_menu" name="esi"/>
+        <!-- A first level in the left side menu is needed
+             before using action= attribute -->
+       
+        <menuitem id="demande_menu" name="Demandes" parent="main_esi_menu"
+                  action="demande_action"/>
+        <!-- Full id location:
+             action="esi.client_list_action"
+             It is not required when it is the same module -->
+
+
+
+
+
+</odoo>
