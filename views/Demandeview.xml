@@ -25,7 +25,6 @@
                     <tree string="demande Tree">
                         <field name="f_name"/>
                         <field name="l_name"/>
-                      <!-- <field name="diplome_id"/>  -->
                          <field name="matricule"/>
                        <!-- <field name="specialite"/>  -->
                         <!-- <field name="file" filename="file_name"/>
@@ -51,12 +50,14 @@
                         <field name="matricule"/>
                         <!-- <field name="diplome_id"/> -->
                         <field name="current_user"/>
+                        <field name="statut"/>
+                        <field name="x_diplome_id"/>  
                         <!-- <field name="adress"/> -->
                         <!-- <field name="matricule"/>
                         <field name="birthday"/>
                         
                         <field name="current_user"/>
-                        <field name="statut"/>
+                        
                          -->
                     
                         <field name="file" filename="file_name"/>

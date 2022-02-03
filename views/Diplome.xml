@@ -25,13 +25,10 @@
                     <tree string="diplome Tree">
                         <field name="f_name"/>
                         <field name="l_name"/> 
-                        <!-- <field name="adresse"/>
-                        <field name="diplome"/> 
-                         <field name="matricule"/> -->
-                       <!-- <field name="specialite"/>  -->
-                        <!-- <field name="file" filename="file_name"/>
-
-                        <field name="file_name" invisible="1"/> -->
+                         <field name="adresse"/>
+                         <field name="type"/> 
+                         <field name="matricule"/> 
+                     
 
          
                     </tree>
@@ -48,16 +45,14 @@
                          <group>
                         <field name="f_name"/>
                         <field name="l_name"/>
-                        <!-- <field name="matricule"/>
-                        <field name="adresse"/> -->
-                        <!-- <field name="type"/>
-                        <field name="specialte"/> -->
-                      
-                        <!-- <field name="matricule"/>
+                        <field name="matricule"/>
+                        <field name="adresse"/> 
+                         <field name="type"/>
                         <field name="specialite"/>
+                      
                         <field name="file" filename="file_name"/>
 
-                        <field name="file_name" invisible="1"/> -->
+                        <field name="file_name" invisible="1"/> 
                        
                          </group>
                      </form>
