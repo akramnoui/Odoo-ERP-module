@@ -18,13 +18,14 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'mail'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+         'reports/report.xml',
          'reports/demandes.xml',
-        'reports/report.xml',
+       
         'templates.xml',
         'views/Demandeview.xml' ,
          'views/Diplome.xml' ,

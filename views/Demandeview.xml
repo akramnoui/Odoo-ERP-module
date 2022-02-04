@@ -65,9 +65,15 @@
                         <field name="file_name" invisible="1"/> 
                        
                          </group>
+                         <div class="oe_chatter">
+                            <field name="message_follower_ids"/>
+                            <field name="activity_ids"/>
+                            <field name="message_ids"/>
+                        </div>
                      </form>
                  </field>
              </record>
+          
         <!-- window action -->
         <!--
             The following tag is an action definition for a "window action",
