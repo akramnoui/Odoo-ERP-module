@@ -14,7 +14,7 @@ class demande(models.Model):
     adress = fields.Char('Adresse e-mail')
     matricule = fields.Char('Matricule')
     annee = fields.Date(string='Année d''obtention')
-    diplome_id = Many2one=('esi.diplome')
+    diplome_id = fields.Many2one('esi.diplome')
     file = fields.Binary(string='Attachement', attachment=True)
     file_name = fields.Char("File Name")
     type = fields.Selection([('master', 'Master'), ('Ingénieur','ingénieur')])

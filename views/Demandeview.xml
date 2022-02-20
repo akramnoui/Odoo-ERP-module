@@ -29,7 +29,7 @@
                          <field name="adress"/>
                          <field name="specialite"/>
                          <field name="annee"/> 
-                         <field name="x_diplome_id"/>
+                         <field name="diplome_id"/>
                          <field name="create_date"/> 
                          <field name="statut" widget="badge" decoration-success="statut == 'approuvée'" decoration-danger="statut == 'manquant'" decoration-warning="statut == 'en attente'" optional="show"/>
 
@@ -61,7 +61,7 @@
                             <field name="annee"/> 
                      
                             <field name="statut"/>
-                            <field name="x_diplome_id"/>  
+                            <field name="diplome_id"/>  
                             
                             <field name="create_uid" widget="many2one_avatar_employee"/>
                      
