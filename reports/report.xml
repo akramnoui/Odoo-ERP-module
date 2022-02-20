@@ -15,5 +15,18 @@
     <field name="binding_type">report</field>
 </record>
 
+<record id="action_report_diplome" model="ir.actions.report">
+    <field name="name">Diplome</field>
+    <field name="model">esi.diplome</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">ESI.report_diplome</field>
+    <field name="report_file">ESI.report_diplome</field>
+    <field name="print_report_name">''</field>
+    <field name="binding_model_id" ref="model_esi_diplome"/>
+    <field name="binding_type">report</field>
+</record>
+
+
+
 
 </odoo>

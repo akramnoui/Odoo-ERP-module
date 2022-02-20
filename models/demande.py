@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+# from typing_extensions import Self
 from xml.dom import ValidationErr
 from odoo import models, fields, api 
 from dateutil.relativedelta import relativedelta
@@ -12,12 +13,13 @@ class demande(models.Model):
     l_name = fields.Char('Last Name')
     adress = fields.Char('Adresse e-mail')
     matricule = fields.Char('Matricule')
-    birthday = fields.Date()
+    annee = fields.Date(string='Année d''obtention')
     diplome_id = Many2one=('esi.diplome')
-    file = fields.Binary(string='file', attachment=True)
+    file = fields.Binary(string='Attachement', attachment=True)
     file_name = fields.Char("File Name")
-    current_user = fields.Many2one('res.users','Current User', default=lambda self: self.env.user)
-    statut = fields.Selection([('en attente' , 'En attente') , ('approuvée', 'Approuvée') , ('manquant' , 'Manquant') ] , default='En attente')
+    type = fields.Selection([('master', 'Master'), ('Ingénieur','ingénieur')])
+    specialite = fields.Selection([('SIT' , 'SIT') , ('SIQ', 'SIQ') , ('SIL' , 'SIL') , ('SID','SID') ] , string = "specialité")
+    statut = fields.Selection([('en attente' , 'En attente') , ('approuvée', 'Approuvée') , ('manquant' , 'Manquant') ] , default= "En attente")
     active = fields.Boolean("Active", default=True)
         
 
@@ -28,10 +30,19 @@ class demande(models.Model):
                 raise ValidationErr("Cannot upload file different from .pdf file")
         
         # sexe = fields.Selection([('Male' , 'male') , ('Female'), ('female')])
-    def _archive(self, max_age_days=1):
+    @api.model
+    def get_default_auType(self):
+     default_auType = 'En attente'
+     return default_auType
+
+    auType = fields.Selection(selection=[('type1', 'Type 1'),('type2', 'Type 2'),], string='Type', )  
+    def _archive(self, max_age_days=90):
         domain = [
             ('active', '=', True),
-          #  ('create_date', '<', fields.Datetime.now() - relativedelta(days=max_age_days)),
+            ('create_date', '<', fields.Datetime.now() - relativedelta(days=max_age_days)),
         ]
-        self.search(domain).unlink()
+        tab = self.search(domain)
+        for record in tab:
+            record.active = False
+            
     

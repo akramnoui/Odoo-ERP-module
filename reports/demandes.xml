@@ -10,12 +10,57 @@
         <t t-foreach="docs" t-as="o">
             <t t-call="web.external_layout">
                 <div class="page">
-                    <h2>Demandes du Jour</h2> 
-                    <t t-foreach="docs" t-as="o"> 
-                    <p> <t t-esc="o.adress"/> 
-                    <!-- <p>Service remise objet: 
-                    <t t-esc="annonce.x_service"/>  -->
-                   </p>   </t> 
+                    <h1>Demandes du Jour</h1> 
+                    <!-- <t t-foreach="docs" t-as="o"> 
+                        <p> <t t-esc="o.f_name"/> 
+                            <t t-esc="o.l_name"/>
+                      
+                        </p>  
+                     </t>  -->
+                     <div class="row">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th style="text-align:left;"><strong>Nom </strong></th>
+                                    <th style="text-align:left;"><strong>Prenom </strong></th>
+                                    <th style="text-align:left;"><strong>Matricule </strong></th>
+                                    <th style="text-align:left;"><strong>Adresse e-mail </strong></th>
+                                    <th style="text-align:left;"><strong>Specialité</strong></th>
+                                    <th style="text-align:left;"><strong>Type de diplome </strong></th>
+                                    <th style="text-align:left;"><strong>Année d'obtention</strong></th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="docs" t-as="o">
+                                    <tr>
+                                        <td style="text-align:left;">
+                                            <t t-esc="o.l_name"/>
+                                        </td>
+                                        <td style="text-align:left;">
+                                            <t t-esc="o.f_name"/>
+                                        </td>
+                                        <td style="text-align:left;">
+                                            <t t-esc="o.matricule"/>
+                                        </td>
+                                         <td style="text-align:left;">
+                                             <span t-field="o.adress"/>
+                                        </td>
+                                        <td style="text-align:left;">
+                                            <t t-esc="o.specialite"/>
+                                        </td>
+                                        <td style="text-align:left;">
+                                            <t t-esc="o.type"/>
+                                        </td>
+                                        <td style="text-align:left;">
+                                            <t t-esc="o.annee"/>
+                                        </td>
+                                       
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </t>
         </t>

@@ -2,4 +2,17 @@
     <record id="group_manager" model="res.groups">
         <field name="name">ESI / Manager</field>
     </record>
+    <record model="ir.module.category" id="module_category_esi">
+        <field name="name">ESI Scolarite</field>
+        <field name="description">Categorie pour ESI</field>
+        <field name="sequence">45</field>
+    </record>
+    <record id="group_esi_administrator" model="res.groups">
+        <field name="name">administrator</field>
+        <field name="category_id" ref="module_category_esi"/>
+    </record>
+    <record id="group_esi_etudiant" model="res.groups">
+        <field name="name">Etudiant</field>
+        <field name="category_id" ref="module_category_esi"/>
+    </record>
 </odoo>

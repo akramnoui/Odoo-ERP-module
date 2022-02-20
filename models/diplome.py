@@ -11,10 +11,11 @@ class diplome(models.Model):
     l_name = fields.Char('Last Name')
     adresse = fields.Char('Adresse e-mail')
     matricule = fields.Char('matricule')
-    specialite = fields.Char('specialité')
+    specialite = fields.Selection([('SIT' , 'SIT') , ('SIQ', 'SIQ') , ('SIL' , 'SIL') , ('SID','SID') ] , string = "specialité")
     type = fields.Selection([('master', 'Master'), ('Ingénieur','ingénieur')])
+    etudiant_id =  fields.Many2one('res.users','Etudiant', default=lambda self: self.env.user)
     
-    file = fields.Binary(string='file', attachment=True)
+    file = fields.Binary(string='Attachements', attachment=True)
 
     file_name = fields.Char("File Name")
 

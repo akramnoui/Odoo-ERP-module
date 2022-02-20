@@ -45,6 +45,7 @@
                          <group>
                         <field name="f_name"/>
                         <field name="l_name"/>
+                        <field name="etudiant_id"/>
                         <field name="matricule"/>
                         <field name="adresse"/> 
                          <field name="type"/>

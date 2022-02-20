@@ -23,9 +23,17 @@
                 <field name="model">esi.demande</field>
                 <field name="arch" type="xml">
                     <tree string="demande Tree">
-                        <field name="f_name"/>
-                        <field name="l_name"/>
+
+                         <field name="create_uid" widget="many2one_avatar_employee"/>
                          <field name="matricule"/>
+                         <field name="adress"/>
+                         <field name="specialite"/>
+                         <field name="annee"/> 
+                         <field name="x_diplome_id"/>
+                         <field name="create_date"/> 
+                         <field name="statut" widget="badge" decoration-success="statut == 'approuvée'" decoration-danger="statut == 'manquant'" decoration-warning="statut == 'en attente'" optional="show"/>
+
+
                        <!-- <field name="specialite"/>  -->
                         <!-- <field name="file" filename="file_name"/>
 
@@ -44,25 +52,23 @@
                  <field name="arch" type="xml">
                      <form string="Demande Form">
                          <group>
-                        <field name="f_name"/>
-                        <field name="l_name"/>
-                        <!-- <field name="diplome"/>  -->
-                        <field name="matricule"/>
-                        <!-- <field name="diplome_id"/> -->
-                        <field name="current_user"/>
-                        <field name="statut"/>
-                        <field name="x_diplome_id"/>  
-                        <!-- <field name="adress"/> -->
-                        <!-- <field name="matricule"/>
-                        <field name="birthday"/>
+                            <field name="f_name"/>
+                            <field name="l_name"/>
+                            <!-- <field name="diplome"/>  -->
+                            <field name="matricule"/>
+                            <field name="adress"/> 
+                            <field name="specialite"/>
+                            <field name="annee"/> 
+                     
+                            <field name="statut"/>
+                            <field name="x_diplome_id"/>  
+                            
+                            <field name="create_uid" widget="many2one_avatar_employee"/>
+                     
                         
-                        <field name="current_user"/>
-                        
-                         -->
-                    
-                        <field name="file" filename="file_name"/>
-
-                        <field name="file_name" invisible="1"/> 
+                            <field name="file" filename="file_name"/>
+    
+                            <field name="file_name" invisible="1"/> 
                        
                          </group>
                          <div class="oe_chatter">

@@ -25,6 +25,7 @@
         'security/ir.model.access.csv',
          'reports/report.xml',
          'reports/demandes.xml',
+         'reports/diplome.xml' ,
        
         'templates.xml',
         'views/Demandeview.xml' ,
