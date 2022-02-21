@@ -12,22 +12,22 @@
                 <div class="page">
                     <t t-foreach="docs" t-as="o"> 
                        
-                        <div style="width:800px; height:600px; padding:20px; text-align:center; border: 10px solid #787878">
-                            <div style="width:750px; height:550px; padding:20px; text-align:center; border: 5px solid #787878">
-                                   <span style="font-size:50px; font-weight:bold">Attestation de Succées</span>
+                        <div style="width:100%; height:600px; padding:20px; text-align:center; border: 10px solid #787878">
+                            <div style="width:100%; height:550px; padding:20px; text-align:center; border: 5px solid #07084f">
+                                   <span style="font-size:50px; font-weight:bold; color:#03032b">Attestation de Succées</span>
                                    <br></br>
                                    <span style="font-size:25px"><i>Ce présent document certifie que </i></span>
                                    <br></br>
-                                   <span style="font-size:30px"><b><t t-esc="o.l_name"/> <t t-esc="o.f_name"/></b></span><br/><br/>
+                                   <span style="font-size:50px; color:#101257"><b><t t-esc="o.l_name"/> <t t-esc="o.f_name"/></b></span><br/><br/>
                                    <span style="font-size:25px"><i>a completé sa formation d'ingénieur en Informatique specialité </i></span> <br/><br/>
-                                   <span style="font-size:30px"><t t-esc="o.specialite"/></span> <br/><br/>
+                                   <span style="font-size:30px; color:#03032b"><t t-esc="o.specialite"/></span> <br/><br/>
                                    <span style="font-size:20px">avec une mention<b> Trés bien</b></span> <br/><br/><br/><br/>
                                    <span style="font-size:25px"><i>Déliveré le</i></span><br></br>
                                     23/01/2022 à Oued Smar
         
                             </div>
-                            </div>
-                     </t>  
+                        </div>
+                    </t>  
                     
                 </div>
             </t>

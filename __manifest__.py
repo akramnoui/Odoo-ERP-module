@@ -22,12 +22,12 @@
 
     # always loaded
     'data': [
+        'security/security.xml',
         'security/ir.model.access.csv',
          'reports/report.xml',
          'reports/demandes.xml',
          'reports/diplome.xml' ,
-       
-        'templates.xml',
+          'templates.xml',
         'views/Demandeview.xml' ,
          'views/Diplome.xml' ,
 

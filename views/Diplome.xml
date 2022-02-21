@@ -66,7 +66,7 @@
         -->
 
              <record id="diplome_action" model="ir.actions.act_window">
-                 <field name="name">diplome</field>
+                 <field name="name">Diplome</field>
                  <field name="res_model">esi.diplome</field>
                  <field name="view_mode">tree,form</field>
                      

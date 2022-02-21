@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
-            <!-- <record model="ir.ui.view" id="demandes_tree_view" >
-                <field name="name" >demande.view.tree</field>
-                <field name="model">esi.demande</field>
-                <field name="arch" type="xml"> 
-                    <tree>
-                        <field name="f_name"/>
-                        <field name="l_name"/>
-                        <field name="sexe"/>
-                        <field name="adress"/>
-                        <field name="birthday"/>
-                    </tree>
-                
-   
-                 </field>
-
-
-             </record> -->
+    
              <record model="ir.ui.view" id="demandes_tree_view">
                 <field name="name">demande.view.tree</field>
                 <field name="model">esi.demande</field>
@@ -34,11 +18,6 @@
                          <field name="statut" widget="badge" decoration-success="statut == 'approuvée'" decoration-danger="statut == 'manquant'" decoration-warning="statut == 'en attente'" optional="show"/>
 
 
-                       <!-- <field name="specialite"/>  -->
-                        <!-- <field name="file" filename="file_name"/>
-
-                        <field name="file_name" invisible="1"/> -->
-
          
                     </tree>
                 </field>
@@ -54,22 +33,14 @@
                          <group>
                             <field name="f_name"/>
                             <field name="l_name"/>
-                            <!-- <field name="diplome"/>  -->
                             <field name="matricule"/>
                             <field name="adress"/> 
                             <field name="specialite"/>
                             <field name="annee"/> 
-                     
-                            <field name="statut"/>
-                            <field name="diplome_id"/>  
-                            
-                            <field name="create_uid" widget="many2one_avatar_employee"/>
-                     
-                        
+                            <field name="type"/>   
+                            <field name="create_uid" widget="many2one_avatar_employee"/>     
                             <field name="file" filename="file_name"/>
-    
                             <field name="file_name" invisible="1"/> 
-                       
                          </group>
                          <div class="oe_chatter">
                             <field name="message_follower_ids"/>
@@ -79,6 +50,21 @@
                      </form>
                  </field>
              </record>
+
+            
+              <record id="view_statut_form" model="ir.ui.view">
+                <field name="name">demande.statut</field>
+                <field name="model">esi.demande</field>
+                <field name="inherit_id" ref="Demande_view_form"/> <!-- ref = 'module_name.form_view_id'-->
+                <field name="groups_id" eval="[(6, 0, [ref('group_esi_administrator')])]"/>
+                <field name="arch" type="xml">
+                   
+                    <xpath expr="//field[@name='file']" position="before">
+                        <field name="statut"/>
+                        </xpath>
+                </field>
+             </record>
+              
           
         <!-- window action -->
         <!--

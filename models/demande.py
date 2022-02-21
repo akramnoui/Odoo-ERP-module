@@ -19,7 +19,7 @@ class demande(models.Model):
     file_name = fields.Char("File Name")
     type = fields.Selection([('master', 'Master'), ('Ingénieur','ingénieur')])
     specialite = fields.Selection([('SIT' , 'SIT') , ('SIQ', 'SIQ') , ('SIL' , 'SIL') , ('SID','SID') ] , string = "specialité")
-    statut = fields.Selection([('en attente' , 'En attente') , ('approuvée', 'Approuvée') , ('manquant' , 'Manquant') ] , default= "En attente")
+    statut = fields.Selection([('en attente' , 'En attente') , ('approuvée', 'Approuvée') , ('manquant' , 'Manquant') ] , default= "en attente")
     active = fields.Boolean("Active", default=True)
         
 

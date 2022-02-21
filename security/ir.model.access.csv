@@ -1,4 +1,7 @@
 id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
-Etudiant,Etudiant,model_esi_diplome,base.group_user,1,1,1,1
-scolarite_manager,Scolarite manager,model_esi_demande,base.group_user,1,1,1,1
+access_etudiant_diplome,access.etudiant.diplome,model_esi_diplome,group_esi_etudiant,1,0,0,0
+access_etudiant_demande,access.etudiant.demande,model_esi_demande,group_esi_etudiant,1,1,1,1
+access_administrator_diplome,access.administrator.diplome,model_esi_diplome,group_esi_administrator,1,1,1,1
+access_administrator_demande,access.administrator.demande,model_esi_demande,group_esi_administrator,1,1,1,1
+
 

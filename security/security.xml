@@ -15,4 +15,26 @@
         <field name="name">Etudiant</field>
         <field name="category_id" ref="module_category_esi"/>
     </record>
+    <record model="ir.rule" id="voir_ses_demandes">
+        <field name="name">Voir ses demandes uniquement</field>
+        <field name="model_id" ref="model_esi_demande"/>
+        <field name="domain_force">[('create_uid','=',user.id)]</field>
+        <field name="groups" eval="[(4, ref('group_esi_etudiant'))]"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="perm_read" eval="1"/>
+    </record>
+  
+    <record model="ir.rule" id="voir_ses_diplomes">
+        <field name="name">Voir ses diplomes uniquement</field>
+        <field name="model_id" ref="model_esi_diplome"/>
+        <field name="domain_force">[('adresse','=', user.partner_id.email)]</field>
+        <field name="groups" eval="[(4, ref('group_esi_etudiant'))]"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="perm_read" eval="1"/>
+    </record>
+     
 </odoo>
